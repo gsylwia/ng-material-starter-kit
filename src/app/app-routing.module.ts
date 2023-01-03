@@ -5,15 +5,17 @@ import { CategoriesCheckboxComponent } from './components/categories-checkbox/ca
 import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
 import { CryptoRadioComponent } from './components/crypto-radio/crypto-radio.component';
 import { HolidaysSelectComponent } from './components/holidays-select/holidays-select.component';
+import { CategoriesSelectionListComponent } from './components/categories-selection-list/categories-selection-list.component';
 import { CryptoListComponentModule } from './components/crypto-list/crypto-list.component-module';
 import { CategoriesCheckboxComponentModule } from './components/categories-checkbox/categories-checkbox.component-module';
 import { CategoriesMenuComponentModule } from './components/categories-menu/categories-menu.component-module';
 import { CryptoRadioComponentModule } from './components/crypto-radio/crypto-radio.component-module';
 import { HolidaysSelectComponentModule } from './components/holidays-select/holidays-select.component-module';
+import { CategoriesSelectionListComponentModule } from './components/categories-selection-list/categories-selection-list.component-module';
 
 @NgModule({
 
-  imports: [RouterModule.forRoot([{ path: 'crypto', component: CryptoListComponent }, { path: 'checkbox-categories', component: CategoriesCheckboxComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'crypto-radio', component: CryptoRadioComponent }, { path: 'public-holidays', component: HolidaysSelectComponent }]), CryptoListComponentModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, CryptoRadioComponentModule, HolidaysSelectComponentModule],
+  imports: [RouterModule.forRoot([{ path: 'crypto', component: CryptoListComponent }, { path: 'checkbox-categories', component: CategoriesCheckboxComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'crypto-radio', component: CryptoRadioComponent }, { path: 'public-holidays', component: HolidaysSelectComponent }, { path: 'categories', component: CategoriesSelectionListComponent }]), CryptoListComponentModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, CryptoRadioComponentModule, HolidaysSelectComponentModule, CategoriesSelectionListComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
