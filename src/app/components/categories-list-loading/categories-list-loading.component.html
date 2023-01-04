@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>Categoies list</mat-card-title>
+    <mat-card-content>
+
+        <section *ngIf="category$ | async as categories; else loading" style="text-align: center;">
+            <ng-container *ngIf=" categories.length > 0; else empty">
+                <mat-checkbox *ngFor="let item of categories">{{item}}</mat-checkbox>
+            </ng-container>
+        </section>
+
+        <ng-template #loading>
+            <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [value]="50">
+            </mat-progress-spinner>
+        </ng-template>
+
+        <ng-template #empty>
+            <img src="https://img.freepik.com/darmowe-wektory/brak-ilustracji-koncepcji-danych_114360-626.jpg?w=1800&t=st=1672834375~exp=1672834975~hmac=85319deacb05a1680d9bc92b848a4c6225deb59935d3f2a93116ef4f7b1b8e6a"
+                width="600">
+
+            <p><a href="https://pl.freepik.com/">Image by storyset</a> on Freepik</p>
+        </ng-template>
+    </mat-card-content>
+</mat-card>
