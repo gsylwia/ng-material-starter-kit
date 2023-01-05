@@ -1,0 +1,24 @@
+<ng-container *ngIf="crypto$ | async as list">
+    <table mat-table [dataSource]="list" class="mat-elevation-z8">
+        <!-- Column 1 -->
+        <ng-container matColumnDef="column1">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let item"> {{ item.symbol }} </td>
+        </ng-container>
+
+        <!-- Column 2 -->
+        <ng-container matColumnDef="column2">
+            <th mat-header-cell *matHeaderCellDef> Last Price </th>
+            <td mat-cell *matCellDef="let item"> {{ item.lastPrice}} </td>
+        </ng-container>
+
+        <!-- Column 3 -->
+        <ng-container matColumnDef="column3">
+            <th mat-header-cell *matHeaderCellDef> Last Quantity </th>
+            <td mat-cell *matCellDef="let item"> {{ item.lastQty }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['column1', 'column2', 'column3']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['column1', 'column2', 'column3'];"></tr>
+    </table>
+</ng-container>
