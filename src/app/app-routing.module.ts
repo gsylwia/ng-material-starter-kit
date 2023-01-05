@@ -13,6 +13,7 @@ import { CryptoListLoadingComponent } from './components/crypto-list-loading/cry
 import { CategoriesListLoadingComponent } from './components/categories-list-loading/categories-list-loading.component';
 import { CategoriesSelectionListLoadingComponent } from './components/categories-selection-list-loading/categories-selection-list-loading.component';
 import { HolidaysLoadingComponent } from './components/holidays-loading/holidays-loading.component';
+import { ProductsMultiListComponent } from './components/products-multi-list/products-multi-list.component';
 import { CryptoListComponentModule } from './components/crypto-list/crypto-list.component-module';
 import { CategoriesCheckboxComponentModule } from './components/categories-checkbox/categories-checkbox.component-module';
 import { CategoriesMenuComponentModule } from './components/categories-menu/categories-menu.component-module';
@@ -26,11 +27,12 @@ import { CryptoListLoadingComponentModule } from './components/crypto-list-loadi
 import { CategoriesListLoadingComponentModule } from './components/categories-list-loading/categories-list-loading.component-module';
 import { CategoriesSelectionListLoadingComponentModule } from './components/categories-selection-list-loading/categories-selection-list-loading.component-module';
 import { HolidaysLoadingComponentModule } from './components/holidays-loading/holidays-loading.component-module';
+import { ProductsMultiListComponentModule } from './components/products-multi-list/products-multi-list.component-module';
 
 @NgModule({
 
 
-  imports: [RouterModule.forRoot([{ path: 'crypto', component: CryptoListComponent }, { path: 'checkbox-categories', component: CategoriesCheckboxComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'crypto-radio', component: CryptoRadioComponent }, { path: 'public-holidays', component: HolidaysSelectComponent }, { path: 'categories', component: CategoriesSelectionListComponent }, { path: 'table-names', component: TableNamesComponent }, { path: 'list-names', component: ListNamesComponent }, { path: 'products', component: ProductListComponent }, { path: 'crypto-loading', component: CryptoListLoadingComponent }, { path: 'categories-checkbox-loading', component: CategoriesListLoadingComponent }, { path: 'categories-loading', component: CategoriesSelectionListLoadingComponent }, { path: 'holidays-loading', component: HolidaysLoadingComponent }]), CryptoListComponentModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, CryptoRadioComponentModule, HolidaysSelectComponentModule, CategoriesSelectionListComponentModule, TableNamesComponentModule, ListNamesComponentModule, ProductListComponentModule, CryptoListLoadingComponentModule, CategoriesListLoadingComponentModule, CategoriesSelectionListLoadingComponentModule, HolidaysLoadingComponentModule],
+  imports: [RouterModule.forRoot([{ path: 'crypto', component: CryptoListComponent }, { path: 'checkbox-categories', component: CategoriesCheckboxComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'crypto-radio', component: CryptoRadioComponent }, { path: 'public-holidays', component: HolidaysSelectComponent }, { path: 'categories', component: CategoriesSelectionListComponent }, { path: 'table-names', component: TableNamesComponent }, { path: 'list-names', component: ListNamesComponent }, { path: 'products', component: ProductListComponent }, { path: 'crypto-loading', component: CryptoListLoadingComponent }, { path: 'categories-checkbox-loading', component: CategoriesListLoadingComponent }, { path: 'categories-loading', component: CategoriesSelectionListLoadingComponent }, { path: 'holidays-loading', component: HolidaysLoadingComponent }, { path: 'list-1-multi-list-products', component: ProductsMultiListComponent }]), CryptoListComponentModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, CryptoRadioComponentModule, HolidaysSelectComponentModule, CategoriesSelectionListComponentModule, TableNamesComponentModule, ListNamesComponentModule, ProductListComponentModule, CryptoListLoadingComponentModule, CategoriesListLoadingComponentModule, CategoriesSelectionListLoadingComponentModule, HolidaysLoadingComponentModule, ProductsMultiListComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

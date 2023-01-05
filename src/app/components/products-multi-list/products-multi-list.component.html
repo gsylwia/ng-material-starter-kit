@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let item of product$ | async">
+                <img src="{{item.image}}" height="40">
+                {{item.title}} for {{item.price |currency: 'USD' }}
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
