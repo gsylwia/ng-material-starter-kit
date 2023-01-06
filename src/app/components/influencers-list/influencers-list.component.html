@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-title>Influencers and Followers</mat-card-title>
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let item of list$ | async">
+                <img src="{{item.avatar}}" height="50" style="border-radius: 50%">
+                {{item.name}}
+
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip>
+                        {{item.followedBy[0].name}}
+                    </mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+        </mat-list>
+
+    </mat-card-content>
+</mat-card>
