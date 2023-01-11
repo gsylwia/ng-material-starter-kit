@@ -14,9 +14,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormControlEmailComponent {
   readonly form: FormGroup = new FormGroup({
-    email: new FormControl('', [
-      Validators.pattern('[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[a-zA-Z]$'),
-    ]),
+    email: new FormControl('', [Validators.email]),
   });
 
   onFormSubmitted(form: FormGroup): void {}
