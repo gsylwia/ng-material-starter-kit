@@ -1,0 +1,98 @@
+<form [formGroup]="orderForm" (ngSubmit)="onOrderFormSubmitted(orderForm)">
+    <div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose an option</mat-label>
+            <mat-select formControlName="product">
+                <mat-option *ngFor="let item of products$ | async" [value]="item.name">
+                    {{item.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-label>Choose an option</mat-label>
+        <div>
+            <mat-radio-group formControlName="quantity">
+                <mat-radio-button *ngFor="let item of quantity$ | async" [value]="item">{{item}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+    <fieldset formGroupName="shipping">
+        <legend>Shipping</legend>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>House Number</mat-label><input matInput type="number" placeholder="House Number"
+                    formControlName="houseNumber" required>
+                <mat-error *ngIf="shipping.get('houseNumber')!.invalid">houseNumber is invalid</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Zip Code</mat-label><input matInput type="text" placeholder="Zip Code"
+                    formControlName="zipCode" required>
+                <mat-error *ngIf="shipping.get('zipCode')!.invalid">zipCode is invalid</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city">
+                    <mat-option *ngFor="let item of cities$ | async" [value]="item.name">
+                        {{item.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-label>Delivery Time</mat-label>
+            <div>
+                <mat-radio-group formControlName="deliveryTime">
+                    <mat-radio-button *ngFor="let item of deliveryTime$ | async" [value]="item">{{item}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset formGroupName="invoice">
+        <legend>Invoice</legend>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Address Line</mat-label><textarea matInput type="text" placeholder="Address Line"
+                    formControlName="addressLine" required></textarea>
+                <mat-error *ngIf="invoice.get('addressLine')!.invalid">addressLine is invalid</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Extra Address Line</mat-label><textarea matInput type="text" placeholder="Extra Address Line"
+                    formControlName="extraAddressLine" required></textarea>
+                <mat-error *ngIf="invoice.get('extraAddressLine')!.invalid">extraAddressLine is invalid</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Vat Number</mat-label><input matInput type="text" placeholder="Vat Number"
+                    formControlName="vatNumber" required>
+                <mat-error *ngIf="invoice.get('vatNumber')!.invalid">vatNumber is invalid</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                    <mat-option *ngFor="let item of countries$ | async" [value]="item.name">
+                        {{item.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </fieldset>
+
+    <div><button type="submit" mat-raised-button color="primary">Submit</button></div>
+</form>
