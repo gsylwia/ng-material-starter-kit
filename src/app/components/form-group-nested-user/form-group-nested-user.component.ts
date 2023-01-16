@@ -14,20 +14,6 @@ import { UsersService } from '../../services/users.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormGroupNestedUserComponent {
-  // readonly userForm: FormGroup = new FormGroup({
-  //   email: new FormControl(),
-  //   username: new FormControl(),
-  //   password: new FormControl(),
-  //   phone: new FormControl(),
-  //   firstname: new FormControl(),
-  //   lastname: new FormControl(),
-  //   city: new FormControl(),
-  //   street: new FormControl(),
-  //   number: new FormControl(),
-  //   zipcode: new FormControl(),
-  //   lat: new FormControl(),
-  //   long: new FormControl(),
-  // });
 
   readonly name: FormGroup = new FormGroup({
     firstname: new FormControl(),
